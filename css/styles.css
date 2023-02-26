@@ -1,0 +1,306 @@
+::-webkit-scrollbar {
+  width : 0.1px; 
+  height: 5px;
+  pacity: 0.02;
+} /* УБРАЛ ПОЛОСУ ПРОКРУТКИ С ЭКРАНА и сделал свою. 
+Когда пишу сайт, чтобы на планшете отображалось содержимое от края до края страницы 
+без зазоров, прокрутку можно отключить. И включить для красоты по готовности сайта.*/
+
+::-webkit-scrollbar-button {height: 50px; background :#42e10e; }  /*2 - кнопка*/  
+
+::-webkit-scrollbar-track {background: #274dd7; }  /*3 - трек */ 
+
+::-webkit-scrollbar-track-piece { background: #e91e63;}  /*4 - видимая часть трека */ 
+
+::-webkit-scrollbar-thumb {background: #fbe100; border-radius: 10px;
+ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); /*inset 1 3 13px rgb(207 10 10 / 64%)*/} /*5 - ползунок */ 
+
+/*настраивает полосу прокрутки с помощью вэбкит. С этими еще не разобрался*/
+
+/*::-webkit-scrollbar{ width: 22px; } /*1 - вертикальный скроллбар*/
+
+/*::-webkit-scrollbar:horizontal{ height: 22px;  }  /*1 - горизонтальный скроллбар*/
+
+/*::-webkit-scrollbar-button {background :#e50845; }  /*2 - кнопка*/  
+
+/*::-webkit-scrollbar-track {background: #008000; }  /*3 - трек */ 
+
+/*::-webkit-scrollbar-track-piece { background: #32CD32;}  /*4 - видимая часть трека */ 
+
+/*::-webkit-scrollbar-thumb {background: #322e76; border-radius: 10px;
+ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); } /*5 - ползунок */ 
+
+/*::-webkit-scrollbar-corner {: #32CD32; }  6 - уголок */
+
+/*::-webkit-resizer { : #32CD32; } 7 - изменение размеров*/ 
+
+html {width: 1280px;}
+
+body {
+width: 1280px;
+padding: 0px;  
+margin: 0px;
+box-sizing: border-box; 
+background-color: #4989d9a1; 
+}
+
+.filterBack {
+  width: 1280px;
+    height: 881px;
+    margin: 0;
+background-image: url('https://media.istockphoto.com/id/1173373272/vector/abstract-red-and-yellow-background.jpg?s=612x612&w=0&k=20&c=pey5pR4GbodYGieWlhGKowgLgwUsik37MCRIfumTURU=');
+background-size: cover;
+}
+
+.back {}
+
+.sliderContent {
+position: absolute;
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 1158px;
+top: 50px;
+left: 65px;
+}
+
+.filterPhotoSliderContent {
+position: absolute;
+top: 243px;
+margin: 0px;
+}
+
+.photoSliderContent {
+width: 1154px;
+height: 540px;
+border-radius: 33px;
+}
+
+/* Отключил, теперь можно регулировать высоту фото на первом экране без пробем
+.row > .column {
+  padding: 0 8p;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}*/
+
+/* Create four equal columns that floats next to eachother */
+.column {
+  width: 20%;
+  padding-right: 42px;
+  margin: 0 auto;
+  float: left;    
+}
+
+/* The Modal (background) */
+.modal { 
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding-top: 3px;
+  background-color: black;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ7DJz_rLDxtWGgYzzXOTkGWklVypmZehT1zMsyeGu4SU2EmzLA19H18jwzqfPEE3JoYE&usqp=CAU');
+background-size: cover;
+  z-index: 1; 
+  overflow: auto; 
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.filterBackModal-content {
+  position: absolute;
+  top: 807px;
+  left: 70px;
+  margin: 0;
+  border-radius: 21px;
+}
+
+.backModal-content {
+width: 1009px;
+height: 502px;
+border-radius: 21px;
+}
+
+/* The Close Button */
+.close {
+  color: #0014ff;
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  display: none;
+  height: 500px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Caption text */
+.caption-container {
+  padding: 6px 0px 1px;
+  background-color: #0015a9bd; 
+  ackground-image: url('https://phonoteka.org/uploads/posts/2021-04/thumbs/1618435627_3-phonoteka_org-p-animirovannie-novogodnie-foni-4.jpg');
+background-size: cover;
+  text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1.12px;
+    color:white;
+}
+
+img.demo {
+  width: 100%;
+  height: 127px;
+  border-radius: 20px;
+  margin-left: 52px;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  width: 118%;
+  height: 145px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img {
+    width: 100%;
+    height: 500px;
+}
+
+@media screen and (max-width: 1300px) {}
+
+@media screen and (max-width: 1024px) {
+
+.filterBack {height: 993px;}
+
+.sliderContent {top: 51px;}
+
+.photoSliderContent {height: 648px;}
+
+.modal {padding-top: 2px;}
+
+.filterBackModal-content {top: 768px;}
+
+.backModal-content {width: 1025px; height: 624px;}
+}
+
+@media screen and (max-width: 800px) {
+
+.filterBack {height: 2046px;}
+
+.sliderContent {top: 273px;}
+
+.modal {padding-top: 41px;}
+
+.filterBackModal-content {left: 0px;}
+
+.backModal-content {width: 1156px; height: 1143px;}
+}
+
+@media screen and (max-width: 768px) {
+
+.filterBack {height: 1322px;}
+
+.sliderContent {top: 116px;}
+
+.modal {padding-top: 2px;}
+
+.backModal-content {height: 504px;}
+}
+
+@media screen and (max-width: 425px) {
+
+.filterBack {height: 2390px;}
+
+.sliderContent {top: 296px;}
+
+.modal {padding-top: 169px;}
+
+.backModal-content {height: 1188px;}
+}
+
+@media screen and (max-width: 375px) {
+
+.filterBack {height: 2708px;}
+
+.sliderContent {top: 521px;}
+
+.photoSliderContent {height: 861px;}
+
+.modal {padding-top: 350px;}
+
+.backModal-content {height: 1000px;}
+}
